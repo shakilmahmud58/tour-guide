@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Places =()=>{
     const [places, setPlaces] = useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:5000/getplaces')
+        axios.get('https://gentle-plains-91142.herokuapp.com/getplaces')
             // .then(res=>res.json())
             .then((data)=>{
                 setPlaces(data.data);

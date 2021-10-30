@@ -5,7 +5,7 @@ const AllLists = ()=>{
     const [lists,setLists]= useState([]);
     const acceptRequest=(id)=>{
     
-        axios.post('http://localhost:5000/acceptrequest',{id:id}).then(res=>{
+        axios.post('https://gentle-plains-91142.herokuapp.com/acceptrequest',{id:id}).then(res=>{
             //console.log(res.data);
             if(res.data.modifiedCount>0)
             {
@@ -17,7 +17,7 @@ const AllLists = ()=>{
     const deleteRequest=(id)=>{
         const confirm = window.confirm('Are You really wnat to delete it?')
         if(confirm){
-            axios.post('http://localhost:5000/deleterequest',{id:id}).then(res=>{
+            axios.post('https://gentle-plains-91142.herokuapp.com/deleterequest',{id:id}).then(res=>{
                 //console.log(res.data);
                 if(res.data.deletedCount>0)
                 {
@@ -28,7 +28,7 @@ const AllLists = ()=>{
         }
     }
     const getLists=()=>{
-        axios.get('http://localhost:5000/requestlists').then(res=>{
+        axios.get('https://gentle-plains-91142.herokuapp.com/requestlists').then(res=>{
             console.log(res.data);
             setLists(res.data);
         })

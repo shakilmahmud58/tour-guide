@@ -8,7 +8,7 @@ const AddItem = () =>{
     const addItem=(e)=>{
         e.preventDefault();
         const field = e.target.form.elements;
-        axios.post('http://localhost:5000/additem',{Name:place.current.value, Image:imageUrl.current.value, Description:description.current.value}).then((res)=>{
+        axios.post('https://gentle-plains-91142.herokuapp.com/additem',{Name:place.current.value, Image:imageUrl.current.value, Description:description.current.value}).then((res)=>{
             //console.log(res.data);
             field.name.value='';
             field.image.value='';

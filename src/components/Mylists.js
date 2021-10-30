@@ -8,7 +8,7 @@ const Mylists = ()=>{
     const deleteRequest=(id)=>{
         const confirm = window.confirm('Are You really wnat to delete it?')
         if(confirm){
-            axios.post('http://localhost:5000/deleterequest',{id:id}).then(res=>{
+            axios.post('https://gentle-plains-91142.herokuapp.com/deleterequest',{id:id}).then(res=>{
                 //console.log(res.data);
                 if(res.data.deletedCount>0)
                 {
@@ -19,7 +19,7 @@ const Mylists = ()=>{
         }
     }
     const getLists=()=>{
-        axios.post('http://localhost:5000/mylists',{email:userEmail}).then(res=>{
+        axios.post('https://gentle-plains-91142.herokuapp.com/mylists',{email:userEmail}).then(res=>{
             console.log(res.data);
             setLists(res.data);
         })

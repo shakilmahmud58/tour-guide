@@ -10,14 +10,14 @@ const PlaceDetails=()=>{
     const [place,setPlace] = useState([]);
     const btnClicked=(e)=>{
         e.preventDefault();
-        axios.post('http://localhost:5000/interested_places',{user: user, email:userEmail, Place : place[0], request : 0}).then((res)=>{
+        axios.post('https://gentle-plains-91142.herokuapp.com/interested_places',{user: user, email:userEmail, Place : place[0], request : 0}).then((res)=>{
             console.log('data added');
         })
     }
     const deleteItem=(id)=>{
         const confirm = window.confirm('Are You really wnat to delete it?')
         if(confirm){
-            axios.post('http://localhost:5000/deleteplace',{id:id}).then(res=>{
+            axios.post('https://gentle-plains-91142.herokuapp.com/deleteplace',{id:id}).then(res=>{
                 //console.log(res.data);
                 if(res.data.deletedCount>0)
                 {
@@ -27,7 +27,7 @@ const PlaceDetails=()=>{
         }
     }
     useEffect(()=>{
-        axios.get(`http://localhost:5000/place/${id}`).then(res=>{
+        axios.get(`https://gentle-plains-91142.herokuapp.com/place/${id}`).then(res=>{
             console.log(res.data);
             setPlace(res.data);
         })
